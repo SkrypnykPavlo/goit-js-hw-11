@@ -71,6 +71,7 @@ function checkData(data, perPage, page) {
   totalPages = Math.ceil(data.total / perPage);
 
   if (page >= totalPages) {
+    intersectionObserver.disconnect();
     return message.onEndOfResults();
   }
 }
